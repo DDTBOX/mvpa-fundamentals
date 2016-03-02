@@ -32,7 +32,7 @@ date: 4 March 2015
 - often expressed as "Is $x$ a significant predictor of $y$?"
 
 ### Algorithmic modelling (*machine learning*)
-- assumes that the structure of the statistical model is irrelevant because the structure of reality is not and potentially *cannot* be known
+- assumes that the structure of the statistical model is irrelevant because the structure of reality is not known
 - focus on prediction
 - interpretability of model parameters not important
 - often expressed as "How accurate is my model (when applied to new data)"?
@@ -52,7 +52,7 @@ date: 4 March 2015
     - $k$-means
     - and many others
 
-# "Recent" mathematics
+# Machine learning
 
 ## Machine learning
 
@@ -75,6 +75,7 @@ The computer must "explore" the training set to find the solution best matching 
 
 \vfill\tiny\hfill{} \url{http://scikit-learn.org/stable/modules/clustering.html}
 
+# Support vector machines
 
 ## Classifying with Support Vector Machines
 - in our experiments, we typically know what the categories are (conditions), but we need to find the prototypical "geography" / topography

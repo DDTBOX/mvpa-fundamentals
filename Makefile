@@ -12,7 +12,7 @@ $(pyfigs): intro-to-mvpa.py
 	python intro-to-mvpa.py
 
 intro-to-mvpa-slides.pdf: intro-to-mvpa.md $(refs) $(pyfigs)
-	pandoc -o $@ $< --to="beamer" --slide-level=2 --include-in-header="surface.tex" --latex-engine=xelatex --bibliography=$(refs)
+	pandoc -o $@ $< --to="beamer" --slide-level=2 --include-in-header="surface.tex" --latex-engine=xelatex -V theme:Singapore --bibliography=$(refs)
  
 # intro-to-eep-erp-slides.pdf
 %-slides.pdf: %.md
