@@ -5,7 +5,7 @@ author: Phillip M. Alday,
 date: 4 March 2015
 ---
 
-# Discovery of the human EEG
+# Discovery of the EEG 
 
 ## Hans Berger (1873-1941)
 
@@ -55,7 +55,7 @@ The surface activity is the sum of the underlying cortical activity.
 No net surface activity is apparent when the cortical sources cancel each other out. 
 
 \column{0.7\textwidth}
-\includegraphics[width=\textwidth]{cortical_v_scalp.pdf}
+\includegraphics[width=\textwidth,trim=0 24mm 0 0mm]{cortical_v_scalp.pdf}
 \end{columns}
 
 \vfill
@@ -103,7 +103,7 @@ No net surface activity is apparent when the cortical sources cancel each other 
 
 \includegraphics{eeg_to_erp.pdf}
 
-Event-related potentialss are summed postsynaptic *potentials* timelocked to cognitive or sensory stimuli (*events*).
+Event-related potentials are summed postsynaptic *potentials* timelocked to cognitive or sensory stimuli (*events*).
 
 \tiny\hfill Bornkessel-Schlesewsky \& Schlesewsky, \emph{Processing Syntax and Morphology: A Neurocognitive Perspective} (2009) 
 
@@ -111,7 +111,7 @@ Event-related potentialss are summed postsynaptic *potentials* timelocked to cog
 - Small potential changes (between approx. 2--8 $\mu{}V$ for language) in comparison to the spontaneous electrical activity of the brain (approx. 10--100 $\mu{}V$)
 - On account of this low signal-to-noise ratio, averaging over a relatively high number of trials (30--40 for language) is required for isolation of the stimulus-related response
 
-# Electo-technical Aspects of ERPs
+# Electro-technical Aspects
 
 ## Voltage, reference and ground 
 - voltage is by definition the difference in electrical potential (the magnitude of the E-field)  between two points
@@ -159,9 +159,10 @@ Linked mastoid reference
 \vfill
 \tiny\hfill Lau. et al. (2006). \emph{Brain and Language} 98, 74--88
 
-# Data Acquisition and Analysis
+# Acquisition and Analysis
 
 ## Raw EEG data
+\centering
 \includegraphics[width=\textwidth]{raw_eeg.pdf} 
 
 ## Steps in data analysis 
@@ -215,9 +216,9 @@ Linked mastoid reference
 
 \tiny
 
-- Acunzo, D. J., MacKenzie, G., and van Rossum, M. C. W. (2012). Systematic biases in early ERP and erf components as a result of high-pass filtering. Journal of Neuroscience Methods, 209(1):212–218.
-- Maess, B., Schröger, E., and Widmann, A. (2016). High-pass filters and baseline correction in m/eeg analysis. commentary on: “how inappropriate high-pass filters can produce artefacts and incorrect conclusions in ERP studies of language and cognition”. Journal of Neuroscience Methods, pages –.
-- Maess, B., Schröger, E., and Widmann, A. (2016). High-pass filters and baseline correction in m/eeg analysis–continued discussion. Journal of Neuroscience Methods, pages –.
+- Acunzo, D. J., MacKenzie, G., and van Rossum, M. C. W. (2012). Systematic biases in early ERP and ERF components as a result of high-pass filtering. Journal of Neuroscience Methods, 209(1):212–218.
+- Maess, B., Schröger, E., and Widmann, A. (2016). High-pass filters and baseline correction in M/EEG analysis. commentary on: “how inappropriate high-pass filters can produce artefacts and incorrect conclusions in ERP studies of language and cognition”. Journal of Neuroscience Methods, pages –.
+- Maess, B., Schröger, E., and Widmann, A. (2016). High-pass filters and baseline correction in M/EEG analysis–continued discussion. Journal of Neuroscience Methods, pages –.
 - Rousselet, G. A. (2012). Does filtering preclude us from studying ERP time-courses? Frontiers in Psychology, 3(00131).
 - Tanner, D., Morgan-Short, K., and Luck, S. J. (2015). How inappropriate high-pass filters can produce artifactual effects and incorrect conclusions in ERP studies of language and cognition. Psychophysiology, 52(8):997–1009.
 - Tanner, D., Norton, J. J. S., Morgan-Short, K., and Luck, S. J. (in press). On high-pass filter artifacts (they’re real) and baseline correction (it’s a good idea) in erp/ermf analysis. Journal of Neuroscience Methods, pages –.
@@ -226,12 +227,15 @@ Linked mastoid reference
 - Widmann, A., Schröger, E., and Maess, B. (2015). Digital filter design for electro- physiological data – a practical approach. Journal of Neuroscience Methods, 250:34–46.
 
 ## Artefacts I: ECG
+\centering
 \includegraphics[width=0.85\textwidth]{artefact_ecg.pdf} 
 
 ## Artefacts II: Blinks
+\centering
 \includegraphics[width=0.85\textwidth]{artefact_blink.pdf} 
 
 ## Artefacts III: Saccades
+\centering
 \includegraphics[width=0.85\textwidth]{artefact_saccade.png} 
 
 
@@ -260,9 +264,11 @@ Linked mastoid reference
 - average over single-subject averages
 
 ## Single-subject average
+\centering
 \includegraphics[width=0.7\textwidth]{sisuavr_onecond.png}
 
 ## Grand average
+\centering
 \includegraphics[width=0.7\textwidth]{grandavr_onecond.png}
 
 ## Statistical analysis 
@@ -278,7 +284,7 @@ Linked mastoid reference
 	- with mixed-effects models (coming soon to a Melbourne near you!)
 	- or MVPA (coming even sooner to an Adelaide near you!)
 	
-# ERP components and effects
+# Components and effects
 
 ## The ``finished product''
 \begin{columns}

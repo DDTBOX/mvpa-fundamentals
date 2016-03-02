@@ -16,7 +16,7 @@ intro-to-mvpa-slides.pdf: intro-to-mvpa.md $(refs) $(pyfigs)
  
 # intro-to-eep-erp-slides.pdf
 %-slides.pdf: %.md
-	pandoc -o $@ $< --to="beamer" --slide-level=2 --include-in-header="surface.tex" --latex-engine=xelatex
+	pandoc -o $@ $< --to="beamer" --slide-level=2 --include-in-header="surface.tex" --latex-engine=xelatex -V theme:Singapore -V navigation:empty
 
 $(refs): bib.keys $(library)
 ifeq ($(library),)
