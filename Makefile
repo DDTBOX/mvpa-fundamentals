@@ -3,7 +3,7 @@ library ?= ${BIB}
 text =  intro-to-mvpa.md
 #mdflags ?= -f markdown-hard_line_breaks+yaml_metadata_block
 refs ?= refs.bib
-pyfigs = cluster.pdf color_scatter_pca.pdf color_scatter.pdf color_scatter_test.pdf kmeans.pdf scatter_big_train.pdf scatter_big_train_svm.pdf scatter.pdf svm_test.pdf svm_train.pdf
+pyfigs = cluster.pdf color_scatter_pca.pdf color_scatter.pdf color_scatter_test.pdf kmeans.pdf scatter_big_train.pdf scatter_big_train_svm.pdf scatter_big_test.pdf scatter_big_test_svm.pdf scatter.pdf svm_test.pdf svm_train.pdf
 	
 %-handout.pdf: %.md
 	pandoc -o $* $<

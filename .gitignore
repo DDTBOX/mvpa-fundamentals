@@ -74,6 +74,7 @@ color_scatter_pca.pdf
 kmeans.pdf
 color_scatter_test.pdf
 scatter_big_test.pdf
+scatter_big_test_svm.pdf
 scatter_big_train.pdf
 scatter_big_train_svm.pdf
 svm_test.pdf
