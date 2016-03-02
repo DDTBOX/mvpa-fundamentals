@@ -60,10 +60,21 @@ target/
 
 # iPython Notebook
 .ipynb_checkpoints
+*.ipynb
 
 # Build products:
 *.html
 *-slides.pdf
+bib.keys
+refs.bib
 cluster.pdf
 scatter.pdf
-*.ipynb
+color_scatter.pdf
+color_scatter_pca.pdf
+kmeans.pdf
+color_scatter_test.pdf
+scatter_big_test.pdf
+scatter_big_train.pdf
+scatter_big_train_svm.pdf
+svm_test.pdf
+svm_train.pdf
