@@ -23,20 +23,19 @@ date: 4 March 2015
 - e.g. how do we test ERP topographies against each other?
 - MVPA is a modern approach drawing from computational advances of the last few decades
 
-## The Two Cultures: Statistics and Machine Learning
-@breiman2001a suggests that there are two cultures in statistics.
-
+## The Two Cultures [@breiman2001a]
+ 
 ### Data modelling (*statistics*)
 - assumes that the structure of the statistical model somehow reflects the structure of reality
 - focus on estimation
 - interpretability of model parameters important
-- often expressed in practice as "Is $x$ a significant predictor of $y$?"
+- often expressed as "Is $x$ a significant predictor of $y$?"
 
 ### Algorithmic modelling (*machine learning*)
 - assumes that the structure of the statistical model is irrelevant because the structure of reality is not and potentially *cannot* be known
 - focus on prediction
 - interpretability of model parameters not important
-- often expressed in practice as "How accurate is my model (when applied to new data)"?
+- often expressed as "How accurate is my model (when applied to new data)"?
 
 ## Multivariate "statistics"
 - PCA and its reincarnation factor analysis
@@ -53,7 +52,7 @@ date: 4 March 2015
     - $k$-means
     - and many others
 
-# 20th century mathematics
+# "Recent" mathematics
 
 ## Machine learning
 
@@ -111,7 +110,6 @@ This only works because we have two categories in two dimensions and thus the bo
 
 ## Support Vector Machines
 - SVM works by constructing a separating hyperplane between groups
-    - (point -> line -> plane -> hyperplane for all higher dimensions)
 - SVM-based classification is inherently **binary**
 - but it is possible to combine binary decisions to make complex decisions
     - one-vs-one: construct an SVM for every pairwise combination of group
