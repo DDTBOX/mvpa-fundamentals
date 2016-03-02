@@ -25,10 +25,10 @@ df = pd.DataFrame(blobs[0],columns=["x","y"])
 df["group"] = blobs[1]
 df["group_color"] = [sns.categorical.color_palette("muted")[_] for _ in blobs[1]]
 
-scatter = sns.jointplot(x="x",y="y",data=df, kind="scatter")
+scatter = sns.jointplot(x="x",y="y",data=df, kind="scatter",stat_func=None)
 scatter.savefig("scatter.pdf")
 
-cluster = sns.jointplot(x="x",y="y",data=df, kind="kde")
+cluster = sns.jointplot(x="x",y="y",data=df, kind="kde",stat_func=None)
 cluster.plot_joint(plt.scatter, c="w", s=30, linewidth=1, marker="+")
 cluster.savefig("cluster.pdf")
 
