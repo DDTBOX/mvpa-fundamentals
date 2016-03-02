@@ -3,17 +3,15 @@ library ?= ${BIB}
 text =  intro-to-mvpa.md
 #mdflags ?= -f markdown-hard_line_breaks+yaml_metadata_block
 refs ?= refs.bib
-
-%.md: %.Rmd
-	R --vanilla --slave -e 'knitr::knit("$<")'
+pyfigs = cluster.pdf color_scatter_pca.pdf color_scatter.pdf color_scatter_test.pdf kmeans.pdf scatter_big_train.pdf scatter_big_train_svm.pdf scatter.pdf svm_test.pdf svm_train.pdf
 	
 %-handout.pdf: %.md
 	pandoc -o $* $<
 
-cluster.pdf scatter.pdf color_scatter.pdf: intro-to-mvpa.py
+$(pyfigs): intro-to-mvpa.py
 	python intro-to-mvpa.py
 
-intro-to-mvpa-slides.pdf: intro-to-mvpa.md $(refs) cluster.pdf scatter.pdf
+intro-to-mvpa-slides.pdf: intro-to-mvpa.md $(refs) $(pyfigs)
 	pandoc -o $@ $< --to="beamer" --slide-level=2 --include-in-header="surface.tex" --latex-engine=xelatex --bibliography=$(refs)
  
 # intro-to-eep-erp-slides.pdf
