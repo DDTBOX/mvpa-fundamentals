@@ -88,6 +88,8 @@ svm_train = plt.figure()
 ax = svm_train.gca()
 ax.contourf(xx, yy, Z, alpha=.8)
 ax.scatter(df.x,df.y,c=df.group_color)
+accuracy = "Accuracy: {}".format(svm.score(df[["x","y"]].as_matrix(),df.group))
+ax.text(2,5.0,accuracy)
 svm_train.savefig("svm_train.pdf")
 
 # test set
@@ -120,18 +122,9 @@ ax.text(2,5.5,accuracy)
 svm_test.savefig("svm_test.pdf")
 
 
-trainsvm_test = plt.figure()
-ax = svm_test.gca()
-ax.contourf(xx, yy, Z, alpha=.8)
-ax.scatter(test.x,test.y,c=test.group_color)
-accuracy = "Accuracy: {}".format(svm.score(test[["x","y"]].as_matrix(),test.group))
-ax.text(2,5.5,accuracy)
-svm_test.savefig("svm_test.pdf")
-
-
 blobs = datasets.make_blobs(n_samples=1000,
                             n_features=2,
-                            centers=5,
+                            centers=[(0,0),(2,1),(-3,-1.5),(-2,0.5),(2,-3)],
                             random_state=42)
 big_train = pd.DataFrame(blobs[0],columns=["x","y"])
 big_train["group"] = blobs[1]
@@ -151,18 +144,32 @@ big_train["svm_color"] = [sns.categorical.color_palette("muted")[_] for _ in big
 scatter_big_train_svm   = sns.JointGrid(x="x",y="y",data=big_train)
 scatter_big_train_svm   = scatter_big_train_svm.plot_joint(plt.scatter,color=big_train.svm_color)
 scatter_big_train_svm   = scatter_big_train_svm.plot_marginals(distplot_color,color=big_train.svm_color)
+accuracy = "Accuracy: {}".format(svm.score(big_train[["x","y"]].as_matrix(),big_train.group))
+scatter_big_train_svm.fig.get_children()[1].text(3,5,accuracy)
 scatter_big_train_svm.savefig("scatter_big_train_svm.pdf")
 
-#xx, yy = np.meshgrid(np.arange(big_train.x.min() - 0.5, big_train.x.max() + 0.5, 0.1),
-#                         np.arange(big_train.y.min() - 0.5, big_train.y.max() + 0.5, 0.1))
-## Plot the decision boundary.
-#Z = svm.decision_function(np.c_[xx.ravel(), yy.ravel()])
-## Put the result into a color plot
-#Z = Z.reshape(xx.shape)
-#svm_big_train = plt.figure()
-#ax = svm_big_train.gca()
-#ax.contourf(xx, yy, Z, alpha=.8)
-#ax.scatter(big_train.x,big_train.y,c=big_train.group_color)
-#accuracy = "Accuracy: {}".format(svm.score(big_train[["x","y"]].as_matrix(),big_train.group))
-#svm_big_train.savefig("svm_big_train.pdf")
+blobs = datasets.make_blobs(n_samples=1000,
+                            n_features=2,
+                            centers=[(0,0),(2,1),(-3,-1.5),(-2,0.5),(2,-3)],
+                            random_state=43)
+big_test = pd.DataFrame(blobs[0],columns=["x","y"])
+big_test["group"] = blobs[1]
+big_test["group_color"] = [sns.categorical.color_palette("muted")[_] for _ in blobs[1]]
 
+scatter_big_test   = sns.JointGrid(x="x",y="y",data=big_test)
+scatter_big_test   = scatter_big_test.plot_joint(plt.scatter,color=big_test.group_color)
+scatter_big_test   = scatter_big_test.plot_marginals(distplot_color,color=big_test.group_color)
+scatter_big_test.savefig("scatter_big_test.pdf")
+
+btda = big_test[["x","y"]].as_matrix()
+
+svm = SVC(kernel="linear").fit(btda,big_test.group)
+big_test["svm"] = svm.predict(btda)
+big_test["svm_color"] = [sns.categorical.color_palette("muted")[_] for _ in big_test["svm"]]
+
+scatter_big_test_svm   = sns.JointGrid(x="x",y="y",data=big_test)
+scatter_big_test_svm   = scatter_big_test_svm.plot_joint(plt.scatter,color=big_test.svm_color)
+scatter_big_test_svm   = scatter_big_test_svm.plot_marginals(distplot_color,color=big_test.svm_color)
+accuracy = "Accuracy: {}".format(svm.score(big_test[["x","y"]].as_matrix(),big_test.group))
+scatter_big_test_svm.fig.get_children()[1].text(3,5,accuracy)
+scatter_big_test_svm.savefig("scatter_big_test_svm.pdf")
