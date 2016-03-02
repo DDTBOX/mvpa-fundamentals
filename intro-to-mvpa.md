@@ -11,3 +11,10 @@ date: 4 March 2015
 
 ## Two, right?
 ![](cluster.pdf)
+
+
+## There is no ideal classifier
+
+http://scikit-learn.org/stable/_images/plot_classifier_comparison_001.png
+
+http://scikit-learn.org/stable/_images/plot_cluster_comparison_0011.png 

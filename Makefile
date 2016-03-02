@@ -5,5 +5,5 @@
 	pandoc -o $* $<
 
 %-slides.pdf: %.md
-	pandoc -o $@ $< --to="beamer" --slide-level=2
+	pandoc -o $@ $< --to="beamer" --slide-level=2 --include-in-header="surface.tex" --latex-engine=xelatex
 	

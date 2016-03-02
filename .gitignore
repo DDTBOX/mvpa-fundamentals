@@ -63,4 +63,7 @@ target/
 
 # Build products:
 *.html
-*.pdf
+*-slides.pdf
+cluster.pdf
+scatter.pdf
+*.ipynb
