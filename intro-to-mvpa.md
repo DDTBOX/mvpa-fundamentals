@@ -7,13 +7,16 @@ date: 4 March 2015
 # Why MVPA?
 
 ## How many clusters are there?
-\includegraphics[width=0.8\textwidth]{scatter.pdf}
+\centering
+\includegraphics[width=0.75\textwidth]{scatter.pdf}
 
 ## Two, right?
-\includegraphics[width=0.8\textwidth]{cluster.pdf}
+\centering
+\includegraphics[width=0.75\textwidth]{cluster.pdf}
 
 ## Two, because I made it that way
-\includegraphics[width=0.8\textwidth]{color_scatter.pdf}
+\centering
+\includegraphics[width=0.75\textwidth]{color_scatter.pdf}
 
 
 ## MultiVariate Pattern Analysis
@@ -24,7 +27,7 @@ date: 4 March 2015
 - MVPA is a modern approach drawing from computational advances of the last few decades
 
 ## The Two Cultures [@breiman2001a]
- 
+
 ### Data modelling (*statistics*)
 - assumes that the structure of the statistical model somehow reflects the structure of reality
 - focus on estimation
@@ -86,7 +89,7 @@ The computer must "explore" the training set to find the solution best matching 
 \column{0.7\textwidth}
 \includegraphics[width=\textwidth]{color_scatter.pdf}
 
-\pause 
+\pause
 \column{0.4\textwidth}
 \begin{itemize}
 \item find a dividing line between groups \pause
@@ -154,7 +157,7 @@ It is possible to express arbitrarily complex multiple choice questions as a ser
 
 \column<3>{0.4\textwidth}
 \begin{itemize}
-\item small amount of overlap 
+\item small amount of overlap
 \item new data -- ``memorization" not possible
 \item high predictive power
 \end{itemize}
@@ -168,10 +171,10 @@ It is possible to express arbitrarily complex multiple choice questions as a ser
 
 \column{0.5\textwidth}
 \centering Ground truth \\
-\includegraphics[width=\textwidth]{scatter_big_train.pdf} 
+\includegraphics[width=\textwidth]{scatter_big_train.pdf}
 
 \column{0.5\textwidth}
-\centering SVM classification \\ 
+\centering SVM classification \\
 \includegraphics[width=\textwidth]{scatter_big_train_svm.pdf}
 
 \end{columns}
@@ -184,10 +187,10 @@ SVM is pretty good for such ideal data. Linear regression doesn't need the point
 
 \column{0.5\textwidth}
 \centering Ground truth \\
-\includegraphics[width=\textwidth]{scatter_big_test.pdf} 
+\includegraphics[width=\textwidth]{scatter_big_test.pdf}
 
 \column{0.5\textwidth}
-\centering SVM classification \\ 
+\centering SVM classification \\
 \includegraphics[width=\textwidth]{scatter_big_test_svm.pdf}
 
 \end{columns}
@@ -200,7 +203,7 @@ It's particularly important that we look at the predictive power and not just th
 - Cross-validation allows you get around this with one dataset.
 - Many different ways to do this, related to the jacknife in non-parametric statistics, such as
     - Leave-one-out (LOO)
-    - $k$-fold validation 
+    - $k$-fold validation
 
 
 
