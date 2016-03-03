@@ -122,7 +122,7 @@ This only works because we have two categories in two dimensions and thus the bo
     - one-vs-all: construct an SVM for every group
 - The further away the separating hyperplane is from the nearest elements of each group, the better this works.
 
-## The theory behind this (or check your assumptioms)
+## The theory behind this (or check your assumptions)
 
 \begin{theorem}[Hahn-Banach]
 There exists a hyperplane between any two disjoint, convex sets in Euclidean space.
