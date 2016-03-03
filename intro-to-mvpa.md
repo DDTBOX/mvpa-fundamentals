@@ -29,12 +29,14 @@ date: 4 March 2015
 ## The Two Cultures [@breiman2001a]
 
 ### Data modelling (*statistics*)
+\vspace{-0.5cm}
 - assumes that the structure of the statistical model somehow reflects the structure of reality
 - focus on estimation
 - interpretability of model parameters important
 - often expressed as "Is $x$ a significant predictor of $y$?"
 
 ### Algorithmic modelling (*machine learning*)
+\vspace{-0.5cm}
 - assumes that the structure of the statistical model is irrelevant because the structure of reality is not known
 - focus on prediction
 - interpretability of model parameters not important
@@ -81,7 +83,7 @@ The computer must "explore" the training set to find the solution best matching 
 # Support vector machines
 
 ## Classifying with Support Vector Machines
-- in our experiments, we typically know what the categories are (conditions), but we need to find the prototypical "geography" / topography
+- in our experiments, we typically know what the categories are (i.e. conditions), but we need to find the prototypical geometry or "geography" (topography in the case of EEG)
 - supervised-learning with support vector machines (SVM)
 
 ## Partition the space up
@@ -93,7 +95,7 @@ The computer must "explore" the training set to find the solution best matching 
 \column{0.4\textwidth}
 \begin{itemize}
 \item find a dividing line between groups \pause
-\item (this example is somewhat trivial as the cluster centers mirrored across $y=x$)
+\item (this example is somewhat trivial as the cluster centers are mirrored across $y=x$)
 \end{itemize}
 
 \end{columns}
@@ -137,7 +139,7 @@ It is possible to express arbitrarily complex multiple choice questions as a ser
 ##  Our easy example
 
 \begin{columns}
-\column{0.8\textwidth}
+\column{0.7\textwidth}
 \includegraphics[width=\textwidth]{svm_train.pdf}
 
 \column{0.4\textwidth}
@@ -178,7 +180,7 @@ It is possible to express arbitrarily complex multiple choice questions as a ser
 \includegraphics[width=\textwidth]{scatter_big_train_svm.pdf}
 
 \end{columns}
-
+\small\vspace{-0.2cm}
 SVM is pretty good for such ideal data. Linear regression doesn't need the points to lie exactly on a line, and SVM doesn't need exactly separable data, but both do better the closer you are to meeting these assumptions.
 
 ## A more complex example
@@ -194,7 +196,7 @@ SVM is pretty good for such ideal data. Linear regression doesn't need the point
 \includegraphics[width=\textwidth]{scatter_big_test_svm.pdf}
 
 \end{columns}
-
+\small\vspace{-0.2cm}
 It's particularly important that we look at the predictive power and not just the model fit when dealing with high-parameter models. These data were constructed to be quite similar, so the predictive power is good, but the real-world is rarely so clean.
 
 
