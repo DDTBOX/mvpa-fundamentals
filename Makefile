@@ -5,6 +5,10 @@ text =  intro-to-mvpa.md
 refs ?= refs.bib
 pyfigs = cluster.pdf color_scatter_pca.pdf color_scatter.pdf color_scatter_test.pdf kmeans.pdf scatter_big_train.pdf scatter_big_train_svm.pdf scatter_big_test.pdf scatter_big_test_svm.pdf scatter.pdf svm_test.pdf svm_train.pdf
 
+.PHONY: all
+
+all: intro-to-mvpa-slides.pdf intro-to-eeg-erp-slides.pdf
+
 %-handout.pdf: %.md
 	pandoc -o $* $<
 
