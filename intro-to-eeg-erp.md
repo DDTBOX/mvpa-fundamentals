@@ -1,6 +1,6 @@
 ---
 title: An introduction to EEG/ERP
-subtitle: unabashedly stolen and adapted from Schlesewsy & Bornkessel
+subtitle: unabashedly stolen and adapted from Schlesewsky & Bornkessel
 author: Phillip M. Alday
 date: 4 March 2015
 ---
