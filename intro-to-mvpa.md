@@ -1,7 +1,7 @@
 ---
 title: An introduction to multivariate pattern analysis
 author: Phillip M. Alday
-date: 4 March 2015
+date: 3 March 2015
 ---
 
 # Why MVPA?
