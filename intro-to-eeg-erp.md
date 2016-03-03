@@ -1,11 +1,11 @@
 ---
 title: An introduction to EEG/ERP
 subtitle: unabashedly stolen and adapted from Schlesewsy & Bornkessel
-author: Phillip M. Alday, 
+author: Phillip M. Alday
 date: 4 March 2015
 ---
 
-# Discovery of the EEG 
+# Discovery of the EEG
 
 ## Hans Berger (1873-1941)
 
@@ -15,8 +15,8 @@ date: 4 March 2015
 \begin{itemize}
 \item German psychiatrist
 \item  First measured human EEG
-\item 1929: \emph{Über das Elektrenkephalogramm des Menschen} (On the human electroencephalogram) 
-\end{itemize} 
+\item 1929: \emph{Über das Elektrenkephalogramm des Menschen} (On the human electroencephalogram)
+\end{itemize}
 
 \column{0.5\textwidth}
 \includegraphics[width=0.8\textwidth]{hans_berger.jpg}
@@ -36,8 +36,8 @@ date: 4 March 2015
 - $\alpha$ (~8--12 Hz) and $\beta$ (~12-30 Hz) rhythms
 - Power changes in different frequency bands depending on cognitive state:
     * $\alpha$ decreases during problem solving (e.g. mental arithmetic)
-    * $\alpha$ increases during relaxed wakefulness 
-    
+    * $\alpha$ increases during relaxed wakefulness
+
 # Physiological Prerequisites
 
 ## The physiological basis of the EEG
@@ -51,15 +51,15 @@ The (scalp) EEG reflects summed postsynaptic activity of pyramidal cells perpend
 
 \begin{columns}
 \column{0.4\textwidth}
-The surface activity is the sum of the underlying cortical activity. 
-No net surface activity is apparent when the cortical sources cancel each other out. 
+The surface activity is the sum of the underlying cortical activity.
+No net surface activity is apparent when the cortical sources cancel each other out.
 
 \column{0.7\textwidth}
 \includegraphics[width=\textwidth,trim=0 24mm 0 0mm]{cortical_v_scalp.pdf}
 \end{columns}
 
 \vfill
-\tiny\hfill adapted from Rösler (2005) 
+\tiny\hfill adapted from Rösler (2005)
 
 ## Coulomb's law: the distance between electrode and source
 
@@ -67,8 +67,8 @@ No net surface activity is apparent when the cortical sources cancel each other 
 \column{0.4\textwidth}
 
 \begin{itemize}
-\item $\vec{F} = k_e\frac{q_1 q_2}{r^2}\hat{r} $ 
-\item $ \Rightarrow \vec{E} = k_e \frac{q}{r^2} \hat{r}$ 
+\item $\vec{F} = k_e\frac{q_1 q_2}{r^2}\hat{r} $
+\item $ \Rightarrow \vec{E} = k_e \frac{q}{r^2} \hat{r}$
 
 \item the distance between the  source of the current and the electrode determines scalp distribution
 \item under certain circumstances, the potentials of distinct sources may merge at the surface
@@ -79,7 +79,7 @@ No net surface activity is apparent when the cortical sources cancel each other 
 \end{columns}
 
 \vfill
-\tiny\hfill adapted from Rösler (2005) 
+\tiny\hfill adapted from Rösler (2005)
 
 ## Gauss's law, equivalent dipoles and the inverse problem
 
@@ -97,15 +97,15 @@ No net surface activity is apparent when the cortical sources cancel each other 
 \end{columns}
 
 \vfill
-\tiny\hfill adapted from Rösler (2005) 
+\tiny\hfill adapted from Rösler (2005)
 
 ## From EEG to ERP
 
-\includegraphics{eeg_to_erp.pdf}
+\includegraphics[width=0.9\textwidth]{eeg_to_erp.pdf}
 
 Event-related potentials are summed postsynaptic *potentials* timelocked to cognitive or sensory stimuli (*events*).
 
-\tiny\hfill Bornkessel-Schlesewsky \& Schlesewsky, \emph{Processing Syntax and Morphology: A Neurocognitive Perspective} (2009) 
+\tiny\hfill Bornkessel-Schlesewsky \& Schlesewsky, \emph{Processing Syntax and Morphology: A Neurocognitive Perspective} (2009)
 
 ## ERPs
 - Small potential changes (between approx. 2--8 $\mu{}V$ for language) in comparison to the spontaneous electrical activity of the brain (approx. 10--100 $\mu{}V$)
@@ -113,46 +113,48 @@ Event-related potentials are summed postsynaptic *potentials* timelocked to cogn
 
 # Electro-technical Aspects
 
-## Voltage, reference and ground 
+## Voltage, reference and ground
+\small
+
 - voltage is by definition the difference in electrical potential (the magnitude of the E-field)  between two points
 - electrodes record potential difference between two electrodes
-	* the electrode you care about 
-	* the reference electrode (called "CMS" for *common mode sensor* in some setups)
+    * the electrode you care about
+    * the reference electrode (called "CMS" for *common mode sensor* in some setups)
 - \alert{there is no such thing as reference-free measurement of voltage!}
 - "Reference-free" systems use mathematical trickery to avoid the issues inherent in the choice of reference
 - the ground electrode provides an additional connection and reference to *ground*, which is considered zero in some sense
-	*  the ground electrode also has other important functions related to electrical safety (both for the equipment and the participant)
-	* the "zero" of ground is like zero on the Celsius scale when talking about water -- it has a useful meaning, but it is not zero in any truly absolute sense 
+    * the ground electrode also has other important functions related to electrical safety (both for the equipment and the participant)
+    * l the "zero" of ground is like zero on the Celsius scale when talking about water -- it has a useful meaning, but it is not zero in any truly absolute sense
 
 
 ## The reference electrode {.allowframebreaks}
 - The choice of reference electrode determines the resulting signal.
 - Bipolar electrodes (often used for the eyes) are referenced to each other.
-	- This effectively creates a single channel for both electrodes
-	- Which makes for larger effects
-	- But this destroys our ability to localize the effect to one electrode or the other.
-	- This is Bad\texttrademark{} for things like independent-component analysis (ICA) and other methods that rely on topography for their interpretation.
+    - This effectively creates a single channel for both electrodes
+    - Which makes for larger effects
+    - But this destroys our ability to localize the effect to one electrode or the other.
+    - This is Bad\texttrademark{} for things like independent-component analysis (ICA) and other methods that rely on topography for their interpretation.
 - It is possible to calculate bipolar channels from unipolar recordings, but not the other way around.
 - It is possible to calculate every common (in the sense of "shared between more than two electrodes") reference from every other.
 - The average reference is calculated from a common reference by setting the average across all electrodes as the reference point.
 - Choice of reference determined by practical concerns and traditions in the field.
 - Common choice for language experiments:
-	- left or right mastoid
-	- referenced offline to the average of both mastoids to  avoid topographical distortions
-	
+    - left or right mastoid
+    - referenced offline to the average of both mastoids to  avoid topographical distortions
+
 ## Why the choice of reference is important
 
 \begin{columns}
 \column{0.5\textwidth}
 Average reference (30 electrodes)
 
-\includegraphics[width=\textwidth]{lau_average_ref.pdf} 
+\includegraphics[width=\textwidth]{lau_average_ref.pdf}
 
 
 \column{0.5\textwidth}
 Linked mastoid reference
 
-\includegraphics[width=\textwidth]{lau_mastoid_ref.pdf} 
+\includegraphics[width=\textwidth]{lau_mastoid_ref.pdf}
 
 \end{columns}
 
@@ -163,17 +165,17 @@ Linked mastoid reference
 
 ## Raw EEG data
 \centering
-\includegraphics[width=\textwidth]{raw_eeg.pdf} 
+\includegraphics[width=\textwidth]{raw_eeg.pdf}
 
-## Steps in data analysis 
+## Steps in data analysis
 1. Preprocessing
-	a. Rereferencing
-	b. Raw data filtering 
-	c. Artefact rejection or correction (automatic + manual)
-	d. Epoching
+    a. Rereferencing
+    b. Raw data filtering
+    c. Artefact rejection or correction (automatic + manual)
+    d. Epoching
 2. Averaging (nowadays mostly for display purposes)
-	a. single subject average (per electrode, condition and time window)
-	b. grand average (average over single subject averages)
+    a. single subject average (per electrode, condition and time window)
+    b. grand average (average over single subject averages)
 3. Statistical analysis
 
 (DB will discuss this more after the break)
@@ -183,11 +185,11 @@ Linked mastoid reference
 \begin{columns}
 \column{0.5\textwidth}
 
-\includegraphics[width=\textwidth]{drift.png} 
+\includegraphics[width=\textwidth]{drift.png}
 
 \column{0.5\textwidth}
 
-\includegraphics[width=\textwidth]{filtered.png} 
+\includegraphics[width=\textwidth]{filtered.png}
 
 \end{columns}
 
@@ -210,7 +212,7 @@ Linked mastoid reference
 
 ### Notch
 - removes a specific frequency range from the data
-- most common application: removal of 50 or 60 Hz (mains power frequency) 
+- most common application: removal of 50 or 60 Hz (mains power frequency)
 
 ## Best practice in filtering is massively controversial
 
@@ -228,32 +230,32 @@ Linked mastoid reference
 
 ## Artefacts I: ECG
 \centering
-\includegraphics[width=0.85\textwidth]{artefact_ecg.pdf} 
+\includegraphics[width=0.85\textwidth]{artefact_ecg.pdf}
 
 ## Artefacts II: Blinks
 \centering
-\includegraphics[width=0.85\textwidth]{artefact_blink.pdf} 
+\includegraphics[width=0.85\textwidth]{artefact_blink.pdf}
 
 ## Artefacts III: Saccades
 \centering
-\includegraphics[width=0.85\textwidth]{artefact_saccade.png} 
+\includegraphics[width=0.85\textwidth]{artefact_saccade.png}
 
 
-## Averaging I 
+## Averaging I
 
 ### Compute single-subject average
 - per electrode
 - per condition
-- per time point / window in the epoch)
+- per time point / window (in the epoch)
 
 ### Options:
-- absolute (relative to reference) values 
-- relative to a baseline (e.g. -200-0 ms "pre-stimulus" or 0-100 within stimulus)
+- absolute (relative to reference) values
+- relative to a baseline (e.g. -200--0 ms "pre-stimulus" or 0--100 within stimulus)
 
 ## Averaging II
 
-### Rejections 
-- exclude trials that contain artefacts 
+### Rejections
+- exclude trials that contain artefacts
 - (optional) exclude trials for which the control task was not performed correctly)
 
 ### Result
@@ -271,19 +273,19 @@ Linked mastoid reference
 \centering
 \includegraphics[width=0.7\textwidth]{grandavr_onecond.png}
 
-## Statistical analysis 
+## Statistical analysis
 - Many aspects to examine, e.g.
-	- latency of component peak
-	- amplitude of component peak
-	- mean amplitude in a given time-window
-	- etc. etc. 
+    - latency of component peak
+    - amplitude of component peak
+    - mean amplitude in a given time-window
+    - etc. etc.
 - Traditionally with factorial repeated-measures ANOVA:
-	- group of electrodes divided up into "regions of interest" (ROIs) on the scalp
-	- ANOVA over condition factors * topographical factors
+    - group of electrodes divided up into "regions of interest" (ROIs) on the scalp
+    - ANOVA over condition factors * topographical factors
 - Nowadays:
-	- with mixed-effects models (coming soon to a Melbourne near you!)
-	- or MVPA (coming even sooner to an Adelaide near you!)
-	
+    - with mixed-effects models (coming soon to a Melbourne near you!)
+    - or MVPA (coming even sooner to an Adelaide near you!)
+
 # Components and effects
 
 ## The ``finished product''
@@ -292,7 +294,7 @@ Linked mastoid reference
 An ERP \emph{component} can be described in terms of
 
 \begin{description}
-\item[latency] time to component onset/peak after critical stimulus onset 
+\item[latency] time to component onset/peak after critical stimulus onset
 \item[polarity] negative or positive deflection relative to control
 \item[topography] electrode positions (ROIs) at which the wave/deflection is observable
 \item[amplitude] the strength of the electric field
