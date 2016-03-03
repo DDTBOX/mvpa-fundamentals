@@ -13,6 +13,7 @@ import statsmodels.formula.api as smf
 
 import seaborn as sns
 from matplotlib import pyplot as plt
+import matplotlib
 
 sns.set(style="white",palette="muted",color_codes=True)
 
@@ -35,12 +36,12 @@ cluster.savefig("cluster.pdf")
 def distplot_color(a,color=None,ax=None,**kwargs):
     if "kde_kws" not in kwargs:
         kwargs["kde_kws"] = dict()
-   
+
     for c in color.unique():
         selection = np.asarray(color == c,dtype=bool)
         kwargs["kde_kws"]["color"] = c
         sns.distplot(a[selection],color=c,ax=ax,**kwargs)
-        
+
     return ax
 
 color_scatter = sns.JointGrid(x="x",y="y",data=df)
@@ -51,7 +52,7 @@ color_scatter.savefig("color_scatter.pdf")
 da = df[["x","y"]].as_matrix()
 #kmlabels = [KMeans(n_clusters=i+1).fit_predict(da) for i in xrange(4)]
 for i in xrange(4):
-    df["kmeans_{}".format(i+1)] = KMeans(n_clusters=i+1).fit_predict(da)   
+    df["kmeans_{}".format(i+1)] = KMeans(n_clusters=i+1).fit_predict(da)
 
 kmeans = plt.figure()
 for i in xrange(4):
@@ -63,7 +64,7 @@ for i in xrange(4):
     ax.set_title("{} cluster{}".format(i+1,"s" if i else "" ))
     ax.set_xlabel("x")
     ax.set_ylabel("y")
-    
+
 kmeans.savefig("kmeans.pdf")
 
 pca = PCA().fit_transform(da)
@@ -78,6 +79,11 @@ svm = SVC(kernel="linear").fit(da,df.group)
 df["svm"] = svm.predict(da)
 df["svm_color"] = [sns.categorical.color_palette("muted")[_] for _ in df["svm"]]
 
+color0 = sns.categorical.color_palette("muted")[0]
+color1 = sns.categorical.color_palette("muted")[1]
+#cm = plt.cm.BuGn
+cm = matplotlib.colors.LinearSegmentedColormap.from_list('muted', [color0,color1],10)
+
 xx, yy = np.meshgrid(np.arange(df.x.min() - 0.5, df.x.max() + 0.5, 0.1),
                          np.arange(df.y.min() - 0.5, df.y.max() + 0.5, 0.1))
 # Plot the decision boundary.
@@ -86,7 +92,7 @@ Z = svm.decision_function(np.c_[xx.ravel(), yy.ravel()])
 Z = Z.reshape(xx.shape)
 svm_train = plt.figure()
 ax = svm_train.gca()
-ax.contourf(xx, yy, Z, alpha=.8)
+ax.contourf(xx, yy, Z, alpha=.8,cmap=cm)
 ax.scatter(df.x,df.y,c=df.group_color)
 accuracy = "Accuracy: {}".format(svm.score(df[["x","y"]].as_matrix(),df.group))
 ax.text(2,5.0,accuracy)
@@ -115,7 +121,7 @@ Z = svm.decision_function(np.c_[xx.ravel(), yy.ravel()])
 Z = Z.reshape(xx.shape)
 svm_test = plt.figure()
 ax = svm_test.gca()
-ax.contourf(xx, yy, Z, alpha=.8)
+ax.contourf(xx, yy, Z, alpha=.8,cmap=cm)
 ax.scatter(test.x,test.y,c=test.group_color)
 accuracy = "Accuracy: {}".format(svm.score(test[["x","y"]].as_matrix(),test.group))
 ax.text(2,5.5,accuracy)
